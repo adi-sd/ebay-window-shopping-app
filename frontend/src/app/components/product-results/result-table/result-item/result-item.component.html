@@ -1,0 +1,34 @@
+<td>{{ itemIndex + 1 }}</td>
+<td>
+    <img
+        src="{{ singleResultItem.itemImage }}"
+        alt="{{ singleResultItem.itemId }}"
+        style="height: 100px; width: 100px"
+        class="clickable-image"
+        (click)="onImageClick(singleResultItem.itemImage)"
+    />
+</td>
+<td>
+    <span
+        data-bs-toggle="tooltip"
+        data-bs-placement="bottom"
+        title="{{ singleResultItem.itemTitle }}"
+        >{{ singleResultItem.itemTitle | truncate : 32 }}</span
+    >
+</td>
+<td>{{ singleResultItem.itemPrice }}</td>
+<td>{{ singleResultItem.itemShipping }}</td>
+<td>{{ singleResultItem.itemZipCode }}</td>
+<td>
+    <button class="btn btn-light" (click)="addItemToWishList(singleResultItem)">
+        <span class="material-symbols-outlined" *ngIf="!itemAddedToWishlist">
+            add_shopping_cart
+        </span>
+        <span
+            class="material-symbols-outlined wishlist-icon"
+            *ngIf="itemAddedToWishlist"
+        >
+            remove_shopping_cart
+        </span>
+    </button>
+</td>

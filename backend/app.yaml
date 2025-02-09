@@ -1,0 +1,5 @@
+runtime: nodejs20 # specify your Node.js version
+env: standard
+instance_class: F1 # choose an instance class based on your needs
+
+network: {}

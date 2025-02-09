@@ -1,0 +1,37 @@
+{
+    "keywords": "iphone",
+    "paginationInput.entriesPerPage": 50,
+    "categoryId": 58058,
+    "buyerPostalCode": "90007",
+    "itemFilter": [
+        {
+            "name": "MaxDistance",
+            "value": 10
+        },
+        {
+            "name": "FreeShippingOnly",
+            "value": true
+        },
+        {
+            "name": "LocalPickupOnly",
+            "value": true
+        },
+        {
+            "name": "HideDuplicateItems",
+            "value": true
+        },
+        {
+            "name": "Condition",
+            "value": ["New", "Used", "Unspecified"]
+        },
+        {
+            "paramName": "Currency",
+            "paramValue": "USD"
+        },
+        {
+            "name": "ReturnsAcceptedOnly",
+            "value": true
+        }
+    ],
+    "outputSelector": ["SellerInfo", "StoreInfo"]
+}

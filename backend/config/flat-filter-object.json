@@ -1,0 +1,23 @@
+{
+    "keywords": "iphone",
+    "paginationInput.entriesPerPage": 50,
+    "buyerPostalCode": "90007",
+    "itemFilter(0).name": "MaxDistance",
+    "itemFilter(0).value": 10,
+    "itemFilter(1).name": "FreeShippingOnly",
+    "itemFilter(1).value": "true",
+    "itemFilter(2).name": "LocalPickupOnly",
+    "itemFilter(2).value": "true",
+    "itemFilter(3).name": "HideDuplicateItems",
+    "itemFilter(3).value": "true",
+    "itemFilter(4).name": "Condition",
+    "itemFilter(4).value.0": "New",
+    "itemFilter(4).value.1": "Used",
+    "itemFilter(4).value.2": "Unspecified",
+    "itemFilter(5).paramName": "Currency",
+    "itemFilter(5).paramValue": "USD",
+    "itemFilter(6).name": "ReturnsAcceptedOnly",
+    "itemFilter(6).value": "true",
+    "outputSelector(0)": "SellerInfo",
+    "outputSelector(1)": "StoreInfo"
+}

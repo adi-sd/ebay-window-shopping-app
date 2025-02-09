@@ -1,0 +1,20 @@
+service: frontend
+runtime: nodejs20
+
+env: standard
+
+instance_class: F1
+
+automatic_scaling:
+    max_instances: 1
+
+handlers:
+    - url: /(.*\.(gif|png|jpg|css|js|ico|json|svg))$
+      static_files: dist/frontend/\1
+      upload: dist/frontend/(.*\.(gif|png|jpg|css|js|ico|json|svg))$
+      secure: always
+
+    - url: /.*
+      static_files: dist/frontend/index.html
+      upload: dist/frontend/index.html
+      secure: always

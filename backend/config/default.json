@@ -1,0 +1,22 @@
+{
+    "EBAY_CLIENT_ID": "ADITYADH-csci571e-PRD-0932e5ad5-f2a90f5a",
+    "EBAY_CLIENT_SECRET": "PRD-932e5ad59b40-5ce3-4d37-a165-4d00",
+    "EBAY_OAUTH_URL": "https://api.ebay.com/identity/v1/oauth2/token",
+    "EBAY_OAUTH_SCOPE": "https://api.ebay.com/oauth/api_scope",
+    "EBAY_AUTH_TOKEN_HEADER": "X-EBAY-API-IAF-TOKEN",
+    "EBAY_FINDING_SERVICE_URL": "https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=ADITYADH-csci571e-PRD-0932e5ad5-f2a90f5a&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD=true",
+    "EBAY_GET_SINGLE_ITEM_URL": "https://open.api.ebay.com/shopping?callname=GetSingleItem&responseencoding=JSON&appid=ADITYADH-csci571e-PRD-0932e5ad5-f2a90f5a&siteid=0&version=967&IncludeSelector=Description,Details,ItemSpecifics",
+    "EBAY_MERCHANDISING_URL": "https://svcs.ebay.com/MerchandisingService?OPERATION-NAME=getSimilarItems&SERVICE-NAME=MerchandisingService&SERVICE-VERSION=1.1.0&CONSUMER-ID=ADITYADH-csci571e-PRD-0932e5ad5-f2a90f5a&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&maxResults=20",
+
+    "GOOGLE_CUSTOM_SEARCH_URL": "https://www.googleapis.com/customsearch/v1?cx=e6d40229145cf4cc4&key=AIzaSyA7NMAd8cuZd6ELke0oWEWoJF-gP31NVyU&imgSize=huge&imgType=PHOTO&num=8&searchType=image",
+    "GOOGLE_CUSTOM_SEARCH_ENGINE_ID": "e6d40229145cf4cc4",
+    "GOOGLE_CUSTOM_APP_KEY": "AIzaSyA7NMAd8cuZd6ELke0oWEWoJF-gP31NVyU",
+
+    "GEONAMES_API_URL": "http://api.geonames.org/postalCodeSearchJSON?maxRows=5&username=csci_571_geonames&country=US",
+    "GEONAMES_USERNAME": "csci_571_geonames",
+
+    "MONGODB_USERNAME": "csci-571-mongodb-user-pwd",
+    "MONGODB_PASSWORD": "qvSMII2uP50tUZAB",
+    "MONGODB_NAME": "csci-571-hw03",
+    "MONGODB_COLLECTION": "wishlist"
+}

@@ -1,0 +1,28 @@
+<td>{{ itemIndex + 1 }}</td>
+<td>
+    <img
+        src="{{ singleWishListItem.itemImage }}"
+        alt="{{ singleWishListItem.itemId }}"
+        style="height: 100px; width: 100px"
+        class="clickable-image"
+        (click)="onImageClick(singleWishListItem.itemImage)"
+    />
+</td>
+<td>
+    <span
+        data-bs-toggle="tooltip"
+        data-bs-placement="bottom"
+        title="{{ singleWishListItem.itemTitle }}"
+        >{{ singleWishListItem.itemTitle | truncate : 32 }}</span
+    >
+</td>
+<td>{{ singleWishListItem.itemPrice }}</td>
+<td>{{ singleWishListItem.itemShipping }}</td>
+<td>
+    <button
+        class="btn btn-light"
+        (click)="removeItemFromWishList(singleWishListItem.itemId)"
+    >
+        <span class="material-symbols-outlined"> remove_shopping_cart </span>
+    </button>
+</td>

@@ -1,0 +1,36 @@
+<div class="app-result-table">
+    <table
+        class="table table-fixed table-dark table-striped table-hover"
+        *ngIf="showTableHeaders"
+    >
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Shipping</th>
+                <th>Zip</th>
+                <th>Wish List</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                *ngFor="
+                    let singleItem of resultItemsArray;
+                    let itemIndex = index
+                "
+                app-result-item
+                [itemIndex]="itemIndex"
+                [singleResultItem]="extractDetails(singleItem)"
+            ></tr>
+        </tbody>
+    </table>
+    <div
+        class="alert alert-warning"
+        role="alert"
+        *ngIf="!showTableHeaders && showErrorMessage"
+    >
+        No Records.
+    </div>
+</div>

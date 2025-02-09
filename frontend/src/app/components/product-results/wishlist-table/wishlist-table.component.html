@@ -1,0 +1,36 @@
+<div class="app-result-table">
+    <table
+        class="table table-fixed table-dark table-striped table-hover"
+        *ngIf="showWishListTable"
+    >
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Shipping</th>
+                <th>Wish List</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                *ngFor="
+                    let singleItem of wishListItemArray;
+                    let itemIndex = index
+                "
+                app-wishlist-item
+                [itemIndex]="itemIndex"
+                [singleWishListItem]="singleItem"
+                (deleteWishListItem)="onDeleteWishListItem()"
+            ></tr>
+        </tbody>
+    </table>
+    <div
+        class="alert alert-warning"
+        role="alert"
+        *ngIf="!showWishListTable && showErrorMessage"
+    >
+        No Records.
+    </div>
+</div>

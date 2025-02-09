@@ -1,0 +1,44 @@
+<div class="app-product-result">
+    <div class="result-buttons">
+        <div class="container">
+            <div class="my-lg-4 d-flex justify-content-center">
+                <button
+                    class="btn btn-dark"
+                    type="button"
+                    (click)="onShowResults()"
+                >
+                    Results
+                </button>
+                <button
+                    class="btn btn-light"
+                    type="button"
+                    (click)="onShowWishList()"
+                >
+                    Wish List
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="result-outlet">
+        <ng-container *ngIf="resultTableShown">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <app-result-table></app-result-table>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="!resultTableShown">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <app-wishlist-table
+                            [reloadWishList]="reloadWishList"
+                        ></app-wishlist-table>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

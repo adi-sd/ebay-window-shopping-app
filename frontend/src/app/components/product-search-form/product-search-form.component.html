@@ -1,0 +1,236 @@
+<div class="container my-lg-4 app-product-search-form">
+    <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-7 my-lg-3">
+                <h3>Product Search</h3>
+            </div>
+        </div>
+        <div class="row row d-flex justify-content-center">
+            <div class="col-lg-7">
+                <form
+                    [formGroup]="productSearchForm"
+                    (ngSubmit)="onSubmit()"
+                    novalidate
+                >
+                    <!-- keywords -->
+                    <div class="row my-lg-3 align-items-center">
+                        <div class="col-lg-4">
+                            <label class="form-label" for="keyword"
+                                >Keyword<span class="required-asterisk">*</span>
+                            </label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input
+                                class="form-control"
+                                type="text"
+                                id="keyword"
+                                formControlName="keyword"
+                                placeholder="Enter Product Name (eg. iPhone 8)"
+                            />
+                            <span
+                                *ngIf="
+                                    productSearchForm.get('keyword').touched &&
+                                    productSearchForm.get('keyword').invalid
+                                "
+                                class="invalid-text"
+                            >
+                                Invalid Keywords. Please Enter a new One!
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- category -->
+                    <div class="row my-lg-3 align-items-center">
+                        <div class="col-lg-4">
+                            <label for="category">Category</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <select
+                                class="form-control"
+                                id="category"
+                                formControlName="category"
+                            >
+                                <option
+                                    *ngFor="let category of productCategories"
+                                    [value]="category.id"
+                                >
+                                    {{ category.name }}
+                                </option>
+                                <!-- Add other categories as needed -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- condition -->
+                    <div class="row my-lg-3 align-items-center">
+                        <div class="col-lg-4">
+                            <label>Condition</label>
+                        </div>
+                        <div class="col-lg-8 d-flex align-items-lg-start">
+                            <div class="form-check-inline">
+                                <input
+                                    type="checkbox"
+                                    id="new"
+                                    formControlName="conditionNew"
+                                    class="me-lg-2"
+                                />
+                                <label for="new">New</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input
+                                    type="checkbox"
+                                    id="used"
+                                    formControlName="conditionUsed"
+                                    class="me-lg-2"
+                                />
+                                <label for="used">Used</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input
+                                    type="checkbox"
+                                    id="unspecified"
+                                    formControlName="conditionUnspecified"
+                                    class="me-lg-2"
+                                />
+                                <label for="unspecified">Unspecified</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- shippingOptions -->
+                    <div class="row my-lg-3 align-items-center">
+                        <div class="col-lg-4">
+                            <label>Shipping Options</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="form-check-inline">
+                                <input
+                                    type="checkbox"
+                                    id="localPickup"
+                                    formControlName="localPickup"
+                                    class="me-lg-2"
+                                />
+                                <label for="localPickup">Local Pickup</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input
+                                    type="checkbox"
+                                    id="freeShipping"
+                                    formControlName="freeShipping"
+                                    class="me-lg-2"
+                                />
+                                <label for="freeShipping">Free Shipping</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- distance -->
+                    <div class="row my-lg-3">
+                        <div class="col-lg-4">
+                            <label for="distance">Distance (Miles)</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <input
+                                        class="form-control"
+                                        type="number"
+                                        id="distance"
+                                        formControlName="distance"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- from -->
+                    <div class="row my-lg-3">
+                        <div class="col-lg-4">
+                            <label
+                                >From<span class="required-asterisk"
+                                    >*</span
+                                ></label
+                            >
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="form-check-inline my-lg-1">
+                                <label for="useCurrentLocation"
+                                    ><input
+                                        type="radio"
+                                        value="useCurrentLocation"
+                                        formControlName="locationType"
+                                        class="me-lg-1"
+                                    />Current Location</label
+                                >
+                            </div>
+                            <br />
+                            <div class="form-check-inline mb-lg-1">
+                                <label for="useCustomLocation"
+                                    ><input
+                                        type="radio"
+                                        value="useCustomLocation"
+                                        formControlName="locationType"
+                                        class="me-lg-1"
+                                    />Other. Please specify zip code:</label
+                                >
+                            </div>
+
+                            <div class="col">
+                                <input
+                                    class="form-control my-lg-1"
+                                    type="text"
+                                    id="zipCode"
+                                    formControlName="zipCode"
+                                    placeholder="Zip Code"
+                                    [matAutocomplete]="auto"
+                                    [ngClass]="{
+                                        invalid:
+                                            zipCode.invalid && zipCode.touched
+                                    }"
+                                />
+                                <span
+                                    *ngIf="zipCode.invalid && zipCode.touched"
+                                    class="invalid-text"
+                                >
+                                    Please enter a zip code.
+                                </span>
+                                <mat-autocomplete #auto="matAutocomplete">
+                                    <mat-option
+                                        *ngFor="
+                                            let option of autocompleteOptions
+                                                | async
+                                        "
+                                        [value]="option"
+                                    >
+                                        {{ option }}
+                                    </mat-option>
+                                </mat-autocomplete>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        type="submit"
+                        class="btn btn-light mx-lg-3 mb-3 d-inline-flex align-items-center"
+                    >
+                        <span
+                            class="material-symbols-outlined"
+                            (click)="onSubmit()"
+                            >Search</span
+                        >
+                        Search
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-light mx-lg-3 mb-3 d-inline-flex align-items-center"
+                        (click)="onReset()"
+                    >
+                        <span class="material-symbols-outlined">
+                            clear_all
+                        </span>
+                        Clear
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
